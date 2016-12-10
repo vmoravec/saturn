@@ -36,8 +36,3 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :saturn, Saturn.Repo,
   adapter: Ecto.Adapters.Mnesia
-
-config :ecto_mnesia,
-  host: Kernel.node,
-  dir:  "priv/mnesia",
-  storage_type: :disc_copies

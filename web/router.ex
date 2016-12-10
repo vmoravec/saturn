@@ -1,6 +1,8 @@
 defmodule Saturn.Router do
   use Saturn.Web, :router
 
+  resources "/users", UserController
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
