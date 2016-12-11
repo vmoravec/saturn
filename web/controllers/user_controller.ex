@@ -5,6 +5,7 @@ defmodule Saturn.UserController do
 
   def index(conn, _params) do
     users = Repo.all(User)
+    IO.puts inspect(users)
     render(conn, "index.html", users: users)
   end
 

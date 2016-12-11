@@ -26,6 +26,11 @@ config :logger, :console,
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
 
-config :ecto_mnesia,
-  dir:  "priv/mnesia",
-  storage_type: :disc_copies
+config :saturn, Saturn.Repo,
+  adapter: Ecto.Adapters.Mnesia
+
+config :ecto_mnesia, Saturn.Repo,
+  adapter: Ecto.Adapters.Mnesia,
+  host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
+  dir: {:system, "MNESIA_DATA_DIR", "priv/data/mnesia"},
+  storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :disc_copies}
