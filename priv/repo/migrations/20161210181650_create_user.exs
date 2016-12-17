@@ -3,10 +3,12 @@ defmodule Saturn.Repo.Migrations.CreateUser do
 
   def change do
     create table(:users) do
+      add :id, :integer
       add :name, :string
       add :email, :string
 
-      timestamps()
+      add :inserted_at, :utc_datetime
+      add :updated_at, :utc_datetime
     end
 
   end

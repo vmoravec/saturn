@@ -32,5 +32,5 @@ config :saturn, Saturn.Repo,
 config :ecto_mnesia, Saturn.Repo,
   adapter: Ecto.Adapters.Mnesia,
   host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
-  dir: {:system, "MNESIA_DATA_DIR", "priv/data/mnesia"},
   storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :disc_copies}
+
